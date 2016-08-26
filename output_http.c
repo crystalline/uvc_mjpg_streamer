@@ -90,7 +90,7 @@ int output_init(output_parameter *param, int id)
     www_folder = NULL;
     nocommands = 0;
 
-    param->argv[0] = OUTPUT_PLUGIN_NAME;
+    param->argv[0] = "http";//OUTPUT_PLUGIN_NAME;
 
     /* show all parameters for DBG purposes */
     for(i = 0; i < param->argc; i++) {
@@ -101,8 +101,7 @@ int output_init(output_parameter *param, int id)
     while(1) {
         int option_index = 0, c = 0;
         static struct option long_options[] = {
-            {"h", no_argument, 0, 0
-            },
+            {"h", no_argument, 0, 0},
             {"help", no_argument, 0, 0},
             {"p", required_argument, 0, 0},
             {"port", required_argument, 0, 0},
@@ -111,8 +110,8 @@ int output_init(output_parameter *param, int id)
             {"w", required_argument, 0, 0},
             {"www", required_argument, 0, 0},
             {"n", no_argument, 0, 0},
-            {"nocommands", no_argument, 0, 0},
-            {0, 0, 0, 0}
+            {"nocommands", no_argument, 0, 0}
+            //{0, 0, 0, 0}
         };
 
         c = getopt_long_only(param->argc, param->argv, "", long_options, &option_index);

@@ -204,8 +204,8 @@ int input_init(input_parameter *param, int id)
             {"pl", required_argument, 0, 0},
             {"gain", required_argument, 0, 0},
             {"cagc", required_argument, 0, 0},
-            {"cb", required_argument, 0, 0},
-            {0, 0, 0, 0}
+            {"cb", required_argument, 0, 0}
+            //{0, 0, 0, 0}
         };
 
         /* parsing all parameters according to the list above is sufficent */
