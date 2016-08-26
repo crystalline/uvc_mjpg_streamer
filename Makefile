@@ -21,8 +21,7 @@ PKG_BUILD_DEPENDS:=MJPG_STREAMER_V4L2:libv4l
 
 TARGET_LDFLAGS+= \
   -Wl,-rpath-link=$(STAGING_DIR)/usr/lib \
-  -Wl,-rpath-link=$(STAGING_DIR)/usr/lib/libconfig/lib \
-  -Wl,-rpath-link=$(STAGING_DIR)/usr/lib/sqlite/lib
+  -Wl,-rpath-link=$(STAGING_DIR)/usr/lib/libjpeg/lib
 
 define Package/uvc_mjpg_streamer
   SECTION:=multimedia
@@ -53,8 +52,7 @@ define Package/uvc_mjpg_streamer/install
 	$(INSTALL_DIR) $(1)/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/uvc_mjpg_streamer $(1)/bin/
 	$(INSTALL_DIR) $(1)/www/webcam
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/www/* $(1)/www/webcam
-    else
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/www/* $(1)/www/webcam/
 endef
 
 $(eval $(call BuildPackage,uvc_mjpg_streamer))
