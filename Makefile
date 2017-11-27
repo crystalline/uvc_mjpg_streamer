@@ -12,7 +12,7 @@ PKG_VERSION:=1.0.0
 PKG_RELEASE:=5
 PKG_MAINTAINER:=Crystalline Emerald
 PKG_LICENSE:=GPL-2
-PKG_CONFIG_DEPENDS:=libjpeg libpthread
+PKG_CONFIG_DEPENDS:=libjpeg-turbo libpthread
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -26,7 +26,7 @@ TARGET_LDFLAGS+= \
 define Package/uvc_mjpg_streamer
   SECTION:=multimedia
   CATEGORY:=Multimedia
-  DEPENDS:=+libpthread +libjpeg +MJPG_STREAMER_V4L2:libv4l
+  DEPENDS:=+libpthread +libjpeg-turbo +MJPG_STREAMER_V4L2:libv4l
   TITLE:=Simplified single-file mjpg-streamer
   URL:=""
   MENU:=1

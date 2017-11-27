@@ -8,6 +8,7 @@ If you want to build it on another architecture, just use src/makefile like this
 `make src/makefile`
 
 Usage example `uvc_mjpg_streamer -i " -r 320x240" -o " -p 8080 -w /www/webcam`
+or `uvc_mjpg_streamer -i " -r 640x480 " -o " -p 9999 `
 Note leading spaces after quotes, as of now they are necessary.
 
 ## A more detailed list of input options:

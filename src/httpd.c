@@ -1269,9 +1269,9 @@ void *client_thread(void *arg)
             return NULL;
         }
 
-        if(strcasestr(buffer, "User-Agent: ") != NULL) {
+        if(strcasecmp(buffer, "User-Agent: ") != 0) {
             req.client = strdup(buffer + strlen("User-Agent: "));
-        } else if(strcasestr(buffer, "Authorization: Basic ") != NULL) {
+        } else if(strcasecmp(buffer, "Authorization: Basic ") != 0) {
             req.credentials = strdup(buffer + strlen("Authorization: Basic "));
             decodeBase64(req.credentials);
             DBG("username:password: %s\n", req.credentials);
